@@ -40,12 +40,11 @@ Name: "quicklaunchicon"; Description: "{cm:CreateQuickLaunchIcon}"; GroupDescrip
 [Files]
 Source: "C:\Users\b\Desktop\somnacea\files\git-repository\necessity\Archimedes-2-5-13-beta\__garden\Garden.exe"; DestDir: "{app}\__garden"; Flags: ignoreversion
 Source: "C:\Users\b\Desktop\somnacea\files\git-repository\necessity\Archimedes-2-5-13-beta\install.bat"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\b\Desktop\somnacea\files\git-repository\necessity\Archimedes-2-5-13-beta\prettyversion.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\b\Desktop\somnacea\files\git-repository\necessity\Archimedes-2-5-13-beta\run.bat"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\b\Desktop\somnacea\files\git-repository\necessity\Archimedes-2-5-13-beta\sdbinst.exe"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\b\Desktop\somnacea\files\git-repository\necessity\Archimedes-2-5-13-beta\theneverhoodfix.sdb"; DestDir: "{app}"; Flags: ignoreversion
 Source: "C:\Users\b\Desktop\somnacea\files\git-repository\necessity\Archimedes-2-5-13-beta\theneverhoodrestorationproject.ico"; DestDir: "{app}"; Flags: ignoreversion
-Source: "C:\Users\b\Desktop\somnacea\files\git-repository\necessity\Archimedes-2-5-13-beta\version.txt"; DestDir: "{app}"; Flags: ignoreversion
+Source: "C:\Users\b\Desktop\somnacea\files\git-repository\necessity\Archimedes-2-5-13-beta\prefect.reg"; DestDir: "{app}"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

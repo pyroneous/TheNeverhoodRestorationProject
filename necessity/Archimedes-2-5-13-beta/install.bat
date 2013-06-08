@@ -29,7 +29,6 @@ rem Begin transmission from disc.
 mkdir "%dreamworksroot%"
 mkdir "%nevroot%"
 if not exist NEVERHOOD_CONTENT mkdir "NEVERHOOD_CONTENT"
-sdbinst.exe theneverhoodfix.sdb
 
 for %%D in (A,B,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z) do (
 	if exist %%D:\NUL ( 
@@ -61,6 +60,8 @@ for %%f in (setup
 echo MSGBOX "Pyroneous did not distribute the Neverhood illicitly to you. Remember that the only legal way to run the Neverhood is to buy it. We will still permit you to install the everhood, but we are not responsible for your actions. You can read our full purposes at theneverhood.sourceforge.net. Thanks!" > %temp%\TEMPmessage.vbs
 call %temp%\TEMPmessage.vbs
 del %temp%\TEMPmessage.vbs /f 
+sdbinst.exe theneverhoodfix.sdb
+reg import prefect.reg
 START NEVERHOOD_CONTENT\setup95.exe
 
 rem Begin checking for files.
