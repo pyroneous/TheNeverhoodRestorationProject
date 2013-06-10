@@ -38,7 +38,7 @@ for %%D in (A,B,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z) do (
 				call %temp%\TEMPmessage.vbs
 				del %temp%\TEMPmessage.vbs /f /q
 				START %%D:\setup95.exe
-				goto file_check
+				goto foreword
 			)
 		)
 	)
@@ -60,11 +60,13 @@ for %%f in (setup
 echo MSGBOX "Pyroneous did not distribute the Neverhood illicitly to you. Remember that the only legal way to run the Neverhood is to buy it. We will still permit you to install the everhood, but we are not responsible for your actions. You can read our full purposes at theneverhood.sourceforge.net. Thanks!" > %temp%\TEMPmessage.vbs
 call %temp%\TEMPmessage.vbs
 del %temp%\TEMPmessage.vbs /f 
-sdbinst.exe theneverhoodfix.sdb
-reg import prefect.reg
 START NEVERHOOD_CONTENT\setup95.exe
 
-rem Begin checking for files.
+rem Begin checking for files & apply fixes.
+:foreword
+sdbinst.exe -q theneverhoodfix.sdb 
+reg import prefect.reg
+
 :file_check
 if exist "%nevroot%\nhc.exe" (goto file_exists) else (timeout /t 1 /nobreak > output)
 goto file_check

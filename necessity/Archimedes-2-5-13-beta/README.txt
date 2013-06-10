@@ -9,12 +9,12 @@ FUNCTIONS OF THE /necessity/Archimedes-2-5-13-beta/:
  - to better audio. 
  - to fix cutscenes. 
  Note that this source is not actually included into the installation; these files are all packed into an executable file. 
+ Quite a few patches have been made to this.
 SOURCE(S): 
 │   install.bat
 │   prettyversion.txt
 │   README.TXT
 │   run.bat
-│   sdbinst.exe
 │   theneverhoodfix.sdb
 │   version.txt
 │
