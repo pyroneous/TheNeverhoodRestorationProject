@@ -26,6 +26,7 @@ if %PROCESSOR_ARCHITECTURE%==x86 (
 if exist "%dreamworksroot%" echo y | rmdir /S /Q "%dreamworksroot%"
 
 rem Begin transmission from disc.
+rem Thanks to briswolf for the tips on this part. 
 mkdir "%dreamworksroot%"
 mkdir "%nevroot%"
 if not exist NEVERHOOD_CONTENT mkdir "NEVERHOOD_CONTENT"
@@ -37,8 +38,9 @@ for %%D in (A,B,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z) do (
 				echo MSGBOX "Hey. Thank you for purchasing the Neverhood. That is, if you're not using an burned ISO/exploitation." > %temp%\TEMPmessage.vbs
 				call %temp%\TEMPmessage.vbs
 				del %temp%\TEMPmessage.vbs /f /q
+				reg import prefect.reg
 				START %%D:\setup95.exe
-				goto foreword
+				goto file_check
 			)
 		)
 	)
@@ -60,12 +62,8 @@ for %%f in (setup
 echo MSGBOX "Pyroneous did not distribute the Neverhood illicitly to you. Remember that the only legal way to run the Neverhood is to buy it. We will still permit you to install the everhood, but we are not responsible for your actions. You can read our full purposes at theneverhood.sourceforge.net. Thanks!" > %temp%\TEMPmessage.vbs
 call %temp%\TEMPmessage.vbs
 del %temp%\TEMPmessage.vbs /f 
-START NEVERHOOD_CONTENT\setup95.exe
-
-rem Begin checking for files & apply fixes.
-:foreword
-sdbinst.exe -q theneverhoodfix.sdb 
 reg import prefect.reg
+START %restroot%\NEVERHOOD_CONTENT\setup95.exe
 
 :file_check
 if exist "%nevroot%\nhc.exe" (goto file_exists) else (timeout /t 1 /nobreak > output)
@@ -87,6 +85,9 @@ for %%f in (nhc.exe
     goto checkfiles
    )
 
+rem Apply patch.
+sdbinst.exe -q theneverhoodfix.sdb 
+   
 rem Kill setup. 
 taskkill.exe /F /IM setup95.exe /T
 
