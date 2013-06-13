@@ -63,7 +63,7 @@ echo MSGBOX "Pyroneous did not distribute the Neverhood illicitly to you. Rememb
 call %temp%\TEMPmessage.vbs
 del %temp%\TEMPmessage.vbs /f 
 reg import prefect.reg
-START %restroot%\NEVERHOOD_CONTENT\setup95.exe
+START "%restroot%\NEVERHOOD_CONTENT\setup95.exe"
 
 :file_check
 if exist "%nevroot%\nhc.exe" (goto file_exists) else (timeout /t 1 /nobreak > output)
